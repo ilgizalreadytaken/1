@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+    <style>
+        body {
+            background-color: #FFD1DC;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #calculator {
+            background-color: #FFF0F5;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input, select, button {
+            margin: 5px;
+        }
+
+        #returnButton {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="calculator">
+    <h1>Калькулятор для дробей</h1>
+  
+    <label for="numerator1">Числитель 1:</label>
+    <input type="number" id="numerator1">
+
+    <label for="denominator1">Знаменатель 1:</label>
+    <input type="number" id="denominator1">
+
+    <select id="operation">
+        <option value="add">+</option>
+        <option value="subtract">-</option>
+        <option value="multiply">*</option>
+        <option value="divide">/</option>
+    </select>
+
+    <label for="numerator2">Числитель 2:</label>
+    <input type="number" id="numerator2">
+
+    <label for="denominator2">Знаменатель 2:</label>
+    <input type="number" id="denominator2">
+
+    <button onclick="calculate()">Вычислить</button>
+
+    <p id="result">Результат: </p>
+
+    
+
+
+
+    <div id="returnButton">
+        <button onclick="goToHomePage()">Вернуться назад</button>
+    </div>
+</div>
+
+
+
+<script>
+    function calculate() {
+        const num1 = parseInt(document.getElementById("numerator1").value);
+        const den1 = parseInt(document.getElementById("denominator1").value);
+        const num2 = parseInt(document.getElementById("numerator2").value);
+        const den2 = parseInt(document.getElementById("denominator2").value);
+
+        const operation = document.getElementById("operation").value;
+
+        // Выполняем операцию в зависимости от выбора
+        let result;
+        switch (operation) {
+            case "add":
+                result = `${num1 * den2 + num2 * den1} / ${den1 * den2}`;
+                break;
+            case "subtract":
+                result = `${num1 * den2 - num2 * den1} / ${den1 * den2}`;
+                break;
+            case "multiply":
+                result = `${num1 * num2} / ${den1 * den2}`;
+                break;
+            case "divide":
+                result = `${num1 * den2} / ${den1 * num2}`;
+                break;
+            default:
+                result = "Ошибка";
+        }
+
+        document.getElementById("result").innerText = `Результат: ${result}`;
+    }    
+    function goToHomePage() {
+        window.location.href = "index2.html"; 
+    }
+</script>
+
+</body>
+</html>
