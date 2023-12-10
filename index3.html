@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Калькуляторы</title>
+    <style>
+        body {
+            font-family: Arial, Trebuchet MS;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #FFD1DC;
+        }
+
+        #header {
+            background-color: #FFF0F5;
+            color: #000000;;
+            text-align: center;
+            padding: 50px;
+	    border-radius: 8px;
+	    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);)
+            position: relative;
+            width: 300px;
+            margin-bottom: 30px;
+        }
+
+        #content {
+            text-align: center;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        .btn {
+            width: 90px;
+            margin: 2px;
+            padding: 18px;
+            font-size: 15px;
+            cursor: pointer;
+            border: none;
+            border-radius: 10px;
+            background-color: #AFDAFC;
+            color: #fff;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>Калькуляторы</h1>
+        <div class="btn-container">
+            <a href="dr2.html" class="btn">дроби</a>
+            <a href="bin2.html" class="btn">конвертер</a>
+            <a href="cal2.html" class="btn">простой</a>
+        </div>
+    </div>
+</body>
+</html>

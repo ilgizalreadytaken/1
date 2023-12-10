@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Конвертер систем счисления</title>
+    <style>
+        body {
+	    background-color: #FFD1DC;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        #converter {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+	    background-color: #FFF0F5
+        }
+
+        input, select, button {
+            margin: 5px;
+            padding: 15px;
+            font-size: 17px;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        #result {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="converter">
+        <h2>КОНВЕРТЕР СИСТЕМ СЧИСЛЕНИЯ</h2>
+        <input type="text" id="inputNumber" placeholder="Введите число">
+        <select id="fromBase">
+            <option value="2">Двоичная</option>
+            <option value="8">Восьмеричная</option>
+            <option value="10">Десятичная</option>
+            <option value="16">Шестнадцатеричная</option>
+        </select>
+        <button onclick="convert()">Конвертировать</button>
+        <select id="toBase">
+            <option value="2">Двоичная</option>
+            <option value="8">Восьмеричная</option>
+            <option value="10">Десятичная</option>
+            <option value="16">Шестнадцатер��чная</option>
+        </select>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function convert() {
+            const inputNumber = document.getElementById('inputNumber').value;
+            const fromBase = parseInt(document.getElementById('fromBase').value, 10);
+            const toBase = parseInt(document.getElementById('toBase').value, 10);
+
+            try {
+                const decimalNumber = parseInt(inputNumber, fromBase);
+                const result = decimalNumber.toString(toBase);
+                document.getElementById('result').innerText = `Результат: ${result.toUpperCase()}`;
+            } catch (error) {
+                document.getElementById('result').innerText = 'Ошибка ввода';
+            }
+        }
+    </script>
+</body>
+</html>
